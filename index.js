@@ -142,50 +142,119 @@ console.log((50 % 2 === 0) ? 'true' : 'false');
 
 // ---
 
+
 // ## -Condicionales -
 
 // 1. Se trata de escribir un script que diga si un número es par o es impar.
 // 	Recordemos que un número es par si al dividirlo por 2 da como resto 0.
-
 // > Si el número es 17, el programa debe decir que es impar.
+let numCondition = 17;
+(numCondition % 2 === 0) ? console.log(`El número ${numCondition} es impar`) : console.log('El número es par');
 
 // 2. Un programa que pida un número y diga si es positivo o negativo. El cero se considera positivo
-
 // > Si num1 es 2 debe decir que num1 es positivo
+// let numPositive = prompt('Introduce un número: ');
+// numPositive >= 0 ? console.log(`El número ${numPositive} es positivo`) : console.log(`El número ${numPositive} es negativo`);
 
 // 3. En este ejercicio debes pedir dos números enteros y devolver el cociente de dividir el primero entre el segundo, pero si este es cero no debe hacer la división, sino lanzar un mensaje de error
-
 // > Si se entran el número 8 y 2, debe resultar 4
-// > 
+// >
 // > Si se entran 4 y 0, dbe resultar en un mensaje de error.
+// let int1 = parseInt(prompt('Introduce un número entero: '));
+// let int2 = parseInt(prompt('Introduce otro número entero: '));
+// if(int2 === 0) {
+//     alert('No se puede dividir por 0');
+// } else {
+//     alert(`El resultado de ${int1} entre ${int2} es ${int1 / int2}`);
+// }
 
 // 4. Este script pide al usuario que teclee una letra entre A, B, C, D. Si pulsa la letra A en mayúsucla o en minúscula le dará el mensaje de que ha acertado, en caso contrario le dirá que se equivocó...
-
 // > Si pulsa C le dará mensaje de error.
+// let option = prompt('Intenta adivinar la letra elegida. Escoge entre las tres opciones: \n A \n B \n C');
+// if(option === 'A' || option === 'a') {
+//     alert('Enhorabuena. Acertaste')
+// } else {
+//     alert('Lo siento, no acertaste');
+// }
 
 // 5. En este ejemplo el usuario entrará dos números. Debe devvolver la diferencia entre el mayor y el menor.
-
 // > Si el usuario entre el 5 y el 8, el programa devolverá 3 (8 - 5)
+// let rest1 = parseInt(prompt('Introduce un entero: '));
+// let rest2 = parseInt(prompt('Introduce otro entero: '));
+// if(rest1 > rest2) {
+//     alert(`El resultado es ${rest1 - rest2}`);
+// } else if(rest2 > rest1) {
+//     alert(`El resultado es ${rest2 -rest1}`);
+// }
 
 // 6. Este ejercicio dirigirá a los clientes a la barra de bebidas o a la de comidas, para ello el cliente puede pedir vino, cerveza, refresco, agua. Si pide un cerveza o vino se le dirige a la barra y si no pues se le dirige a la tienda.
-
 // > Un cliente elige vino, aparecerá el mensaje vaya a la barra, en caso contrarío dirá que vaya a la tienda.
+// let customerOption = parseInt(prompt('Introduce el número que quieres para tomar: \n 1-Vino \n 2-Cerveza \n 3-Refresco \n 4-Agua'));
+// if(customerOption === 1 || customerOption === 2) {
+//     alert('Vaya a la barra');
+// } else if(customerOption === 3 || customerOption === 4) {
+//     alert('Vaya a la tienda');
+// } else {
+//     alert('Esa no es una opción válida');
+// }
 
 // 7. Este programa te ayuda a viajar. El programa pide al usuario si va a viajar con coche, tren, bicicleta o autobús. Si va en tren o autobus le recordará que lleve dinero para el billete.
-
 // > El cliente pide ir en tren, aparecerá el mensaje "lleva dinero para el ticket"
+// let voyage = parseInt(prompt('Introduce la opción con la que quieres viajar: \n 1-Bicicleta \n 2-Tren \n 3-Autobús'));
+// if(voyage === 2 || voyage === 3) {
+//     alert('Coge dinero para comprar el billete');
+// } else if(voyage === 1) {
+//     alert('La bici es gratis');
+// } else {
+//     alert('Esa no es una opción válida');
+// }
 
 // 8. En un tramo de un rally los conductores no deben ir ni demasiado rápido ni demasiado lentos. Este ejercicio debe tomar la longitud del tramo en kilometros y el tiempo empleado, si la velocidad está entre 40 y 60 km/h el conductor pasa la prueba en caso contrario es descalificado.
-
 // > Ejemplo si recorre 100 km en 4 horas, ha ido a una velocidad de 100/4 que son 25km/h. Estaría descalificado.
+// let distance = parseInt(prompt('Introduce el tramo que has recorrido: '));
+// let time = parseInt(prompt('Introduce las horas que has tardado: '));
+// let velocity = distance / time;
+// if(velocity >= 40 && velocity <= 60) {
+//     alert('Has pasado la prueba');
+// } else {
+//     alert('Estás descalificado');
+// }
 
 // 9. Una tienda aplica un descuento del 15% para las compras que incluyan más de 10 artículos iguales cuyo precio sea superior a 40 euros. Tu programa debe comprobar y calcular la cantidad a pagar sabiendo el número de artículos y el precio de cada uno.
-
 // >Por ejemplo si compras 20 artículos de 10 euros se te descuenta un 15% del total pagarías 20*10 - 20*10*0.15 = 170 eruos.
+// let art = parseInt(prompt('Introduce la cantidad de artículos que quieres: '));
+// let price = parseInt(prompt('Introduce el precio de uno de los artículos: '));
+// let total = art * price;
+// let desc = total - (total * .15);
+// if(art > 10 && total > 40) {
+//     alert(`El total a pagar es de ${desc} €`);
+// } else {
+//     alert(`El total a pagar es de ${total} €`)
+// }
 
 // 10. Crea un programa que pida la nota de un estudiante en los tres trimestres del curso y calcule la nota promedio. El resultado que dará será suspenso si la media es menor de 5, aprobado si está entre 5 y 7 y  Notable por encima de 7.
-
 // > Para las notas 6, 8, 10 la media es 8 por tanto se califica como Notable
+// let note = parseFloat(prompt('Introduce tu nota del primer trimestre: '));
+// let note2 = parseFloat(prompt('Introduce tu nota del segundo trimestre: '));
+// let note3 = parseFloat(prompt('Introduce tu nota del tercer trimestre: '));
+// let mediaTrimestre = (note + note2 + note3) / 3;
+// switch(true) {
+//     case (mediaTrimestre > 7):
+//         alert(`Tu nota media es de ${mediaTrimestre}. Tienes un notable`);
+//         console.log(mediaTrimestre);
+//         break;
+//     case (mediaTrimestre >= 5 && mediaTrimestre <= 7):
+//         alert(`Tu nota media es de ${mediaTrimestre}. Estás aprobado`);
+//         console.log(mediaTrimestre);
+//         break;
+//     case (mediaTrimestre < 5):
+//         alert(`Tu nota media es de ${mediaTrimestre}. Estás suspenso`);
+//         console.log(mediaTrimestre);
+//         break;
+//     default:
+//         alert('Ha habido un error');
+// }
+
 
 // ---
 
@@ -196,7 +265,7 @@ console.log((50 % 2 === 0) ? 'true' : 'false');
 
 // > Si el usuario entra 2 y luego 4, debe decir que el mayor es el segundo número.
 
-// 2. El usuario debe entrar un número y su cuadrado. Si es correcto el script enviará un mensja ede acierto en caso contrario dirá que se produjo un error.  
+// 2. El usuario debe entrar un número y su cuadrado. Si es correcto el script enviará un mensja ede acierto en caso contrario dirá que se produjo un error.
 // Se trata de usar el if resumido (cond?true:false)
 
 // > Por ejemplo si teclea 3 y 9 el resutlado es Correcto. Si tecleo 3 8, el resultado será Error
@@ -205,7 +274,7 @@ console.log((50 % 2 === 0) ? 'true' : 'false');
 
 // > Si le digo que tengo 19 años me dirá "Puedes entrar", si le digo que tengo 14 años me dirá "Espera 4 años"
 
-// 4. En un restaurante los clientes pueden pedir menú de carne, pescado o verdura. Si pide carne se le ofrecerá como bebida vino tinto, si pide pescado se le ofrecerá vino blanco y si pide verdura se le ofrecerá agua  
+// 4. En un restaurante los clientes pueden pedir menú de carne, pescado o verdura. Si pide carne se le ofrecerá como bebida vino tinto, si pide pescado se le ofrecerá vino blanco y si pide verdura se le ofrecerá agua
 // Si no elije el menú de la lista aparecerá la frase elija carne, pescado o verdura.
 
 // > Por ejemplo he pedido carne, el ejercicio mostrará "¿Desea beber vino tinto?"
@@ -214,7 +283,7 @@ console.log((50 % 2 === 0) ? 'true' : 'false');
 
 // > Tecleo que pago 2 créditos, el escript me dirá que puedo acceder a las salas de consola y juegos 2D.
 
-// 6. A partir de un número de mes tecleado por un usuario el programa debe indicar la estación del año.  
+// 6. A partir de un número de mes tecleado por un usuario el programa debe indicar la estación del año.
 // Las estaciones serán 12,1,2: Invierno. 3,4,5 primavera, 6,7,8 verano y 9,10,11 otoño.
 
 // > i tecleo el 3 el script me responderá que estamos en Primavera
