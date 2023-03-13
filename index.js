@@ -260,122 +260,277 @@ let numCondition = 17;
 
 // ## - Condicionales 2ndo bloque -
 
-// 1. El usuario debe introducir dos valores numéricos por teclado y la aplicación deberá indicar cual es el mayor, el primero o el segundo.  
+// 1. El usuario debe introducir dos valores numéricos por teclado y la aplicación deberá indicar cual es el mayor, el primero o el segundo.
 // La idea es usar las sentencias if reducidas (cond ? true:false)
-
 // > Si el usuario entra 2 y luego 4, debe decir que el mayor es el segundo número.
+// let highNum = parseInt(prompt('Introduce un número: '));
+// let otherNum = parseInt(prompt('Introduce otro número: '));
+// (highNum > otherNum) ? alert(`${highNum} es mayor que ${otherNum}`) : alert(`${otherNum} es mayor que ${highNum}`);
 
 // 2. El usuario debe entrar un número y su cuadrado. Si es correcto el script enviará un mensja ede acierto en caso contrario dirá que se produjo un error.
 // Se trata de usar el if resumido (cond?true:false)
-
 // > Por ejemplo si teclea 3 y 9 el resutlado es Correcto. Si tecleo 3 8, el resultado será Error
+// let numToExp = parseInt(prompt('Introduce un número: '));
+// let exp = parseInt(prompt('Introduce su cuadrado: '));
+// (exp === (numToExp ** 2)) ? alert(`${exp} es el cuadrado de ${numToExp}. El resultado es correcto`) : alert('Se ha producido un error');
 
 // 3. En ste caso, también suando el perador ternario o if reducido, un visitante a la página deberá teclear su edad, si es igual o mayor de 18 recibirá el mensaje de "Entra" en caso contario deberá decirle los años que tiene que estperar para entrar
-
 // > Si le digo que tengo 19 años me dirá "Puedes entrar", si le digo que tengo 14 años me dirá "Espera 4 años"
+// let edadUsuario = parseInt(prompt('Intoduce tu edad: '));
+// (edadUsuario >= 18) ? alert('Puedes entrar') : alert(`Aún tienes que esperar ${18 - edadUsuario} años para entrar`);
 
 // 4. En un restaurante los clientes pueden pedir menú de carne, pescado o verdura. Si pide carne se le ofrecerá como bebida vino tinto, si pide pescado se le ofrecerá vino blanco y si pide verdura se le ofrecerá agua
 // Si no elije el menú de la lista aparecerá la frase elija carne, pescado o verdura.
-
 // > Por ejemplo he pedido carne, el ejercicio mostrará "¿Desea beber vino tinto?"
+// let eleccion = prompt('Puedes elegir lo siguiente: \n Carne \n Pescado \n Verduras');
+// if (eleccion === 'carne' || eleccion === 'Carne')  {
+//     alert('¿Desea vino tinto?')
+// } else if(eleccion === 'pescado' || eleccion === 'Pescado') {
+//     alert('¿Desea vino blanco?')
+// } else if(eleccion === 'verdura' || eleccion === 'Verdura') {
+//     alert('¿Desea agua?');
+// } else {
+//     alert('Debe seleccionar carne, pescado o verdura');
+// }
 
 // 5. En una sala de juegos existen tre salas: Consolas, Juegos 2D, Juegos 3D, Realidad Virtual. Si un usuario paga  4 créditos puede acceder a todas, si apga 3 solo podrá acceder a las tres primeras, si paga 2 a las dos primeras y si paga 1 solo a la primera sala.
-
 // > Tecleo que pago 2 créditos, el escript me dirá que puedo acceder a las salas de consola y juegos 2D.
+// let pago = parseInt(prompt('Introduce, de 1 a 4 créditos, cuántos quieres pagar: '));
+// if(pago === 4) {
+//     alert('Puedes entrar a todas las salas');
+// } else if(pago === 3) {
+//     alert('Puedes entrar a las salas de "consolas", "Juegos 2D" y a la de "Juegos 3D"');
+// } else if(pago === 2) {
+//     alert('Puedes entrar a las salas de "consolas" y a la de "Juegos 2D"');
+// } else if(pago === 1) {
+//     alert('Puedes entrar a la sala de consolas');
+// } else {
+//     alert('Eso no es un precio válido');
+// }
 
 // 6. A partir de un número de mes tecleado por un usuario el programa debe indicar la estación del año.
 // Las estaciones serán 12,1,2: Invierno. 3,4,5 primavera, 6,7,8 verano y 9,10,11 otoño.
-
 // > i tecleo el 3 el script me responderá que estamos en Primavera
+// let numMes = parseInt(prompt('Introduce el número del mes: '));
+// if(numMes === 12 || numMes === 1 || numMes === 2) {
+//     alert('Invierno');
+// } else if(numMes === 3 || numMes === 4 || numMes === 5) {
+//     alert('Primavera')
+// } else if(numMes === 6 || numMes === 7 || numMes === 8) {
+//     alert('Verano');
+// } else if(numMes === 9 || numMes === 10 || numMes === 1) {
+//     alert('Otoño');
+// } else {
+//     alert('Introduce un número válido');
+// }
 
 // 7. En este ejercicio el usuario entra la longitud de la base y el alto de un cuadrado. Si la base y el alto son idénticos la respuesta será "Es un cuadrado", si la base es mayor que el alto dira "Rectángulo horizontal" y en caso contrario dirá "Rectángulo vertical".
-
 // > Si entro base es 10, alto es 5. Resultado rectángulo
+// let longBase = parseInt(prompt('Introduce la longitud de la base: '));
+// let alto = parseInt(prompt('Introduce el alto: '));
+// (longBase > alto) ? alert('Rectángulo horizontal') : alert('Rectángulo vertical');
 
 // 8. En una tienda coches se quiere redirigir a un cliente a una sección de acuerdo al tipo de coche que elija. Si elige tipo gasolina o 1 se le enviará a la oficina numero 100. Si elije el tipo diesel o 2 irá a la oficia 200 y si elige electrico o 3 se le enviará a la ofician 300.
-
 // > Por ejemplo tecleo el número 2, el mesnaje me dirá que vaya a la oficina 200
+// let userElec = parseInt(prompt('Introduce el número de la opción que quieres: \n 1-Gasolina \n 2-Diésel \n 3-Eléctrico'));
+// if(userElec === 1) {
+//     alert('Vaya a la oficina 100');
+// } else if(userElec === 2) {
+//     alert('Vaya a la oficina 200');
+// } else if(userElec === 3) {
+//     alert('Vaya a la oficina 300');
+// } else {
+//     alert('Introduzca una opción válida');
+// }
 
-// 9. Un comerciante hace descuentos a sus clientes de la siguiente forma:  
-// Si ha comprado menos de 100 euros no hay descuento  
-// Si la compra está entre 100 y 300 euros le descuenta un 5%  
-// Si la compra está por encima de 300 hasta 500 euros le descuenta un 10%   
+// 9. Un comerciante hace descuentos a sus clientes de la siguiente forma:
+// Si ha comprado menos de 100 euros no hay descuento
+// Si la compra está entre 100 y 300 euros le descuenta un 5%
+// Si la compra está por encima de 300 hasta 500 euros le descuenta un 10%
 // Si la compra supera los 400 euros le descuenta un 15%
-
 // > Es decir: hago una compra de 150 euros pago 150 - 5% de 150, o sea 142,5 euros.
+// let compraUsuario = parseInt(prompt('Introduce la cantidad que te has gastado: '));
+// if(compraUsuario < 100) {
+//     alert(`Total a pagar: ${compraUsuario}€`);
+// } else if(compraUsuario >= 100 && compraUsuario <= 300) {
+//     alert(`Total a pagar: ${compraUsuario - (compraUsuario * .05)}€`);
+// } else if(compraUsuario > 300 && compraUsuario <= 400) {
+//     alert(`Total a pagar: ${compraUsuario - (compraUsuario * .1)}€`);
+// } else if(compraUsuario > 400) {
+//     alert(`Total a pagar: ${compraUsuario - (compraUsuario * .15)}€`);
+// } else {
+//     alert('Introduzca una cantidad válida');
+// }
 
 // 10. En este ejercicio el script convertirá las notas numéricas de un examen en paabras: 0 - 4 suspenso, 5-6 aprobado, 7-8 notable, 9-10 sobresaliente.
-
 // > Si tecleo 8 me dirá "Tu calificación es  notable"
+// let notaUsuario = parseInt(prompt('Introduce la nota que has sacado: '));
+// switch(true) {
+//     case notaUsuario >= 0 && notaUsuario < 5:
+//         alert('Suspenso');
+//         break;
+//     case notaUsuario >= 5 && notaUsuario < 7:
+//         alert('Aprobado');
+//         break;
+//     case notaUsuario >= 7 && notaUsuario < 9:
+//         alert('Notable');
+//         break;
+//     case notaUsuario >= 9 && notaUsuario <= 10:
+//         alert('Sobresaliente');
+//         break;
+//     default:
+//         alert('Introduce una nota válida');
+//         break;
+// }
 
 // ---
 
-// ## - Bucles For - 
+// ## - Bucles For -
 
-// 1. Usando un bucle for escribir un script que pida un valor entero y muestre en pantalla una lista de números desde el 0 al valor tecleado. Los números se separarán por comas.  
-
-// > Si el usuario entra por teclado el número 5 el script devolverá la secuencia  0, 1, 2, 3, 4, 5  
+// 1. Usando un bucle for escribir un script que pida un valor entero y muestre en pantalla una lista de números desde el 0 al valor tecleado. Los números se separarán por comas.
+// > Si el usuario entra por teclado el número 5 el script devolverá la secuencia  0, 1, 2, 3, 4, 5
+// let numLoop = parseInt(prompt('Introduce un número del 0 al 20: '));
+// if(numLoop >= 1 && numLoop <= 20) {
+//     let num = [];
+//     for(let i = 0; i <= numLoop; i++) {
+//         num.push(i);
+//     }
+//     alert(num.join(','));
+// } else {
+//     alert('Inroduce un número válido');
+// }
 
 // 2. Se trata de que dado un número entero el script muesre una cuenta atrás, es decir, una lista de numeros separados por coma desde el número tecleado hasta el 0.
-
 // > Si tecle o número 5 deberá mostarar 5,4,3,2,1.
+// let numLoopRev = parseInt(prompt('Introduce un número del 0 al 20: '));
+// if(numLoopRev >= 0 && numLoopRev <= 20) {
+//     let num = [];
+//     for(let i = 0; i <= numLoopRev; i++) {
+//         num.push(i);
+//     }
+//     alert(num.reverse().join(','));
+// } else {
+//     alert('Introduce un número válido');
+// }
 
 // 3. Se quiere un bucle que genere una lista con todos los números pares positivos por debajo del número tecleado por el usuario. Los números se aparecerán en una ventana alert con cambios de linea (carácter '\n').
-
 // > Si tecleo el número el número 9 deberá mostrar cinco lineas con los números 0 2 4 6 8
+// let evenNum = parseInt(prompt('Introduce un número del 0 al 40: '));
+// if(evenNum >= 0 && evenNum <= 50) {
+//     let num = [];
+//     for(let i = 0; i <= evenNum; i++) {
+//         if(i % 2 === 0) {
+//             num.push(i);
+//         }
+//     }
+//     alert((num.join(' ') + '\n').repeat(5));
+// } else {
+//     alert('Introduce un número válido');
+// }
 
-// 4. Este script debe escribir la tabla de multiplicar del número que el usuario teclee. La tabla mostrará en diferentes líneas cada producto y el resultado en la forma a x b = ab.  
+// 4. Este script debe escribir la tabla de multiplicar del número que el usuario teclee. La tabla mostrará en diferentes líneas cada producto y el resultado en la forma a x b = ab.
 // Recuerda que el salto de linea es el carácter "\n"
-
-// > Si el usuario teclea el 4 la tabla mostrará diez líneas en la forma 
+// > Si el usuario teclea el 4 la tabla mostrará diez líneas en la forma
 //  4 x 1 = 4
 //  4 x 2 = 8...
+// let multNum = parseInt(prompt('Introduce un número del 1 al 10: '));
+// if(multNum >= 1 && multNum <= 10) {
+//     let num = '';
+//     for(let i = 1; i <= 10; i++) {
+//         num += `${multNum} x ${i} = ${multNum * i} \n`;
+//     }
+//     alert(num);
+// }
 
 
-// 5. En este ejercicio mezclamos bucles on condicionales: el usuario escribe un número y el script imprimirá (console.log) todos los números menores que al dividirlos por 3 den como resto 2.  
+// 5. En este ejercicio mezclamos bucles on condicionales: el usuario escribe un número y el script imprimirá (console.log) todos los números menores que al dividirlos por 3 den como resto 2.
 // Recuerda: un número es múltiplo de N es cuando el dividirlo por N el resto es 0.
-
 // > Por ejemplo si tecleas el 14, obtendré la lista 2, 5, 8 y 11
+// let numRest = parseInt(prompt('Introduce un número entero: '));
+// let num = [];
+// for(let i = 0; i < numRest; i++) {
+//     if(i % 3 === 2) {
+//         num.push(i);
+//     }
+// }
+// console.log(num);
 
 // 6. Este script el usuario deberá teclear una letra y un número, y el programa mostrará una cadena formada por la letra repetida el número que haya tecleado.
-
 // > Si el usuario teclea x y 5 el script mostrará xxxxx. O sea una cadena de 5 letras x
+// let userChar = prompt('Introduce una letra: ');
+// let userN = parseInt(prompt('Introduce un número: '));
+// let strUser = '';
+// for(let i = 0; i <= userN; i++) {
+//     strUser += userChar;
+// }
+// console.log(strUser);
 
 // 7. Se quiere tener un contador de dos dígitos en base 5. El funcionamiento es simple: el dígito de la derecha irá aumentando y cuando pase de 4 su valor se pondrá a 0 y el dígito de la izquierda se incrementa en 1. El contador debe deternerse cuando alcancemos el valor 1:4
-
-// > Usamos el console log para ir imprimiendo los valores de los dígitos, deberá quedar algo así:  
-// 0:0  
-// 0:1  
-// 0:2  
-// ...  
-// ...  
+// > Usamos el console log para ir imprimiendo los valores de los dígitos, deberá quedar algo así:
+// 0:0
+// 0:1
+// 0:2
+// ...
+// ...
 // 1:4 será el final del conteo
+// let contador1 = 0;
+// let contador2 = 0;
+// for(let i = 0; i < 4; i++) {
+//     contador2 += 1;
+//     console.log(`${contador1}:${contador2}`);
+//     if(contador2 === 4) {
+//         contador1 = 1;
+//         contador2 = 0;
+//         console.log(`${contador1}:${contador2}`);
+//         for(let i = 0; i < 4; i++) {
+//             contador2 += 1;
+//             console.log(`${contador1}:${contador2}`);
+//         }
+//     }
+// }
 
-// 8. Se trata de dibujar un triángulo con asteriscos. El usuario tecleará un valor entero, el programa escribirá con asteriscos tantas lineas como diga ese número. Cada linea estará formada por una serie de astericos tan larga como diga el número de línea en el que está.  
+// 8. Se trata de dibujar un triángulo con asteriscos. El usuario tecleará un valor entero, el programa escribirá con asteriscos tantas lineas como diga ese número. Cada linea estará formada por una serie de astericos tan larga como diga el número de línea en el que está.
 // 	Para separar una linea de la siguiente en console o en alert debes usar "\n". En este ejercicio usa console.log.
-
-// > Le tecleamos el valor 5. El resultado será:   
+// > Le tecleamos el valor 5. El resultado será:
 // ```
-// *  
-// ** 
-// ***  
-// ****  
+// *
+// **
+// ***
+// ****
 // *****
 // ```
+// let intUser = parseInt(prompt('Introduce un número entero: '));
+// let sign = '*';
+// for(let i = 1; i <= intUser; i++) {
+//     console.log(`${sign.repeat(i)} \n`)
+// }
+
 
 // 9. Se trata de crear una aplicación que calcule la suma de todos los números enteros positivos entre 0 y el número tecleado por el usuario. El resultado será de la fomra "Los números enteros de 0 a n  suman suma"
-
 // > Si tecleo el 5 obtendré "Los enteros enteros de 0 a n suman 15" (1+2+3+4+5 ).
+// let positiveNum = parseInt(prompt('Introduce un número entero: '));
+// let sumTot = 0;
+// for(let i = 0; i <= positiveNum; i++) {
+//     if(i % 2 === 0) {
+//         sumTot += i;
+//     }
+// }
+// console.log(`La suma total de los números positivos entre el 0 y el ${positiveNum} es igual a ${sumTot}`);
 
 // 10. Programa un script que pida al usuario que teclee 4 números (uno cada vez). Con esos números el programa deberá calcular la media aritmética. O sea la suma de los 4 números dividida entre 4
-
 // > El progrma pide 4 veces al usuario que telcee un número y este escribe 5,9,10,12. El programa dirá "La media es 9"
+// let sumTotMed = 0;
+// for(let i = 0; i < 4; i++) {
+//     let num = parseInt(prompt('Introduce un número: '));
+//     sumTotMed += num;
+// }
+// console.log(`La media de estos 4 números es: ${sumTotMed / 4}`);
 
 // ---
 
 // ## - Bucles While -
 
-// 1. Usando un bucle while escribir un script que pida un valor entero y cree una lista con los números desde el 0 al valor tecleado. Luego deberá sacar esa lista con un alert. Los números se separarán por comas.  
+// 1. Usando un bucle while escribir un script que pida un valor entero y cree una lista con los números desde el 0 al valor tecleado. Luego deberá sacar esa lista con un alert. Los números se separarán por comas.
 
 // > Si le doy el número 5 pues deberá contar 0,1,2,3,4,5
 
@@ -455,7 +610,7 @@ let numCondition = 17;
 
 // > Si tecleo pimero un 12 y luego un 9, volverá a pedirme que escriba los datos. Si escribo un 12 y luego un 20 me dirá "Numeros ordenados"
 
-// 10. Escribir un script para determinar si el numero introducido por el usuario es un palíndromo, es decir, un número que se lee igual del derecho que del revés.  
+// 10. Escribir un script para determinar si el numero introducido por el usuario es un palíndromo, es decir, un número que se lee igual del derecho que del revés.
 // Para invertir el número podéis hacer sucesivas divisiones entre 10: el resto lo añadis al inveso multiplicado por 10. Y repetis con el valor entero del numero dividido por 10.
 
 // > Si escribo el número 12421 me dirá que "12421 es un palíndromo".
@@ -476,24 +631,24 @@ let numCondition = 17;
 
 // > Si ejecuto sumaLista([2,4,5,1,2]) deberá devolver como resultado 14
 
-// 4. Diseña un script que vaya leyendo números y guardándolos en un array. Una vez lleno mostrará el array y deberá decir cuantos números son pares y cuantos son impares. La entrada de datos termina cuando el usuario teclea 0 o un valor no numérico.  
-// Intenta resolverlo sin usar métodos del objeto array, solo indices y longitudes de arrays.  
+// 4. Diseña un script que vaya leyendo números y guardándolos en un array. Una vez lleno mostrará el array y deberá decir cuantos números son pares y cuantos son impares. La entrada de datos termina cuando el usuario teclea 0 o un valor no numérico.
+// Intenta resolverlo sin usar métodos del objeto array, solo indices y longitudes de arrays.
 // No debe aceptar valores no numéricos (isNaN(valor) permite detectar valores no numéricos).
 
 // > Por ejemplo si tecleo: 3,5,4,6,7,8, 11el script me dirá que el array de entrada es [3,5,4,6,7,8, 11] y que hay 3 pares y 4 impares.
 
-// 5. Escribe una función que pueda devolver el valor más pequeño de un array numérico o el índice de ese valor. El segundo parámetro de la función dirá si debe devolver el valor ("v") o el índice ("i"). No uses métodos del objeto array.  
-// Se supone que el primer parámetro siempre será una matriz llena con al menos 1 número y sin duplicados.  
+// 5. Escribe una función que pueda devolver el valor más pequeño de un array numérico o el índice de ese valor. El segundo parámetro de la función dirá si debe devolver el valor ("v") o el índice ("i"). No uses métodos del objeto array.
+// Se supone que el primer parámetro siempre será una matriz llena con al menos 1 número y sin duplicados.
 // Se suponer el segundo parámetro será una letra con uno de dos valores: 'v' 'i'
 
 // > min([4,5,7], 'v')  devolverá 4, mientras que min([4,5,7], 'i') devolverá 0.
 
-// 6. Escribe una función que determina si la letra que se le pasa como argumento se encuentra contenida dentro de un array de letras que se le pasa como segundo argumento.  
+// 6. Escribe una función que determina si la letra que se le pasa como argumento se encuentra contenida dentro de un array de letras que se le pasa como segundo argumento.
 // Se trata de resolverlo sin usar métodos del objeto array, solo el dato tipo array.
 
 // > existeEn('a', ['w','e','r','i']) devolverá false porque la letra 'a' no existe en el array
 
-// 7. En este ejempo debes crear una función que reciba una array y devuelva una cadena formada por los elementos del array separados por un guión - si una letra es una vocal. La función tiene como único parámetro la letra que se quiere comprobar. Debe funcionar igual con mayúsculas y con minúsculas y por supuesto usando arrays.  
+// 7. En este ejempo debes crear una función que reciba una array y devuelva una cadena formada por los elementos del array separados por un guión - si una letra es una vocal. La función tiene como único parámetro la letra que se quiere comprobar. Debe funcionar igual con mayúsculas y con minúsculas y por supuesto usando arrays.
 // Solo se aceptan letras internacionales (sin acentos)
 
 // > Por ejemplo esVocal('A') dirá true, mientras que esVocal("z") dirá false.
@@ -502,13 +657,13 @@ let numCondition = 17;
 
 // > Si llamamos a la función como listar("rojo", "verde", "azul") deberá devolver "rojo-verde-azul"
 
-// 9. Un servicio de atención al ciente tiene establecido turnos semanales para sus empleados de manera que cada día de la semana se encarga del servicio  una persona: lunes - María, Martes - Luis, Miércoles - Antonia, Jueves - Pedro, Viernes - Marisa.  
-// Usa un array para almacenar los datos del servicio. En este array cada elemento será un para día - nombre.  
+// 9. Un servicio de atención al ciente tiene establecido turnos semanales para sus empleados de manera que cada día de la semana se encarga del servicio  una persona: lunes - María, Martes - Luis, Miércoles - Antonia, Jueves - Pedro, Viernes - Marisa.
+// Usa un array para almacenar los datos del servicio. En este array cada elemento será un para día - nombre.
 // Crea una función que responda con el nombre de la persona encargada del servicio sabiendo el día. Si el día no existe deberá decir que no hay servicio. Los nombres de los días deben ir en minúsculas.
 
 // > Si le pido servicio('Lunes') me debería decir "Este día se encarga María" y si le pido servico(Miércoles") me daría Antonia.
 
-// 10. Un tienda vende monitores, teclados y ratones. Los precios se almacenan en una estructura array conde cada elemento es un par producto - precio.  
+// 10. Un tienda vende monitores, teclados y ratones. Los precios se almacenan en una estructura array conde cada elemento es un par producto - precio.
 // Diseña una función que reciba como argumento el nombre de un producto (minúscula) y devuelva su precio.
 
 // > Si la lsita de precios es monitor: 200€, teclado: 20€ ratón: 10€, al pedri precio('monitor') me devolcerá 200.
@@ -517,7 +672,7 @@ let numCondition = 17;
 
 // ## - Funciones -
 
-// 1. Crea una función que tenga dos argumentos: num1, num2, y que deuelva como resultado la suma de ambos números. Se supone que se usarán solo números válidos. 
+// 1. Crea una función que tenga dos argumentos: num1, num2, y que deuelva como resultado la suma de ambos números. Se supone que se usarán solo números válidos.
 
 // > Llamo a la función como sumar(3,5) deberá devolver 8.
 
@@ -535,8 +690,8 @@ let numCondition = 17;
 
 // 5. Usa el algoritmo de Euclides para diseñar una función que determine el máximo común divisor de dos números. Bueno este algoritmo es bien simple. Para clacular el mcd de A y B:
 // ```
-// Si A = 0 entonces MCD(A,B)=B, ya que el MCD(0,B)=B, y podemos detenernos. 
-// Si B = 0 entonces MCD(A,B)=A, ya que el MCD(A,0)=A, y podemos detenernos. 
+// Si A = 0 entonces MCD(A,B)=B, ya que el MCD(0,B)=B, y podemos detenernos.
+// Si B = 0 entonces MCD(A,B)=A, ya que el MCD(A,0)=A, y podemos detenernos.
 // Calcula el resto de A/B
 // Asigna a A el valor de B
 // Asigna a B el resto
