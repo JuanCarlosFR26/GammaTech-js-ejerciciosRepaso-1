@@ -531,142 +531,602 @@ let numCondition = 17;
 // ## - Bucles While -
 
 // 1. Usando un bucle while escribir un script que pida un valor entero y cree una lista con los números desde el 0 al valor tecleado. Luego deberá sacar esa lista con un alert. Los números se separarán por comas.
-
 // > Si le doy el número 5 pues deberá contar 0,1,2,3,4,5
+// let numUser = parseInt(prompt('Introcuce un número entero: '));
+// let sumUser = 0;
+// while(sumUser <= numUser) {
+//     console.log(sumUser);
+//     sumUser++;
+// }
 
 // 2. Se trata de pedir al usuario que teclee un número entre 1 y 5, si escribe alguno que esté fuera de ese rango deberá volver a pedir el número
-
 // > Si tecleo 0 me dirá Por favor teclee un número entre 1 y 5.
+// let numero = 0;
+
+// while(numero < 1 || numero > 5) {
+//   numero = parseInt(prompt("Ingrese un número entre 1 y 5:"));
+
+//   if(numero < 1 || numero > 5) {
+//     alert("Número inválido. Intente de nuevo.");
+//   }
+// }
+
+// alert("El número ingresado es: " + numero);
+
 
 // 3. Un script que preguntará al usuario si desea continuar con el programa. Si el usuario pulsa una letra n (mayúscla o minúscula), el programa finalizará. Cualquier otra entrada repetirá la pregunta
-
 // > El usuario teclea Si, como no es la letra s pues dirá Error, ¿Desa seguir con el programa?
+// let program = true;
+
+// while(program) {
+//     program = prompt('¿Quieres continuar con el programa? Presiona N o n si quieres pararlo. Para continuar, pulsa cualquier otra tecla: ')
+
+//     if(program === 'n' || program === 'N') {
+//         alert('Programa terminado');
+//         break;
+//     } else {
+//         alert('El programa continúa')
+//     }
+// }
+
+
 
 // 4. Determinar si el número que teclea el usuario es primo o no. Recordar que un número primo es el que solo puede dividirse por si mismo y por la unidad.
-
 // > Si el usuario teclea el 3: dirá que 3 es primo. Si teclea el 4 dirá que 4 no es primo.
+// let numero = parseInt(prompt('Introduce un número: '));
+// let esPrimo = true;
+
+// while(esPrimo) {
+//     for(let i = 0; i < numero; i++) {
+//         if(numero % i === 0) {
+//             alert(`El ${numero} no es primo`);
+//             numero = parseInt(prompt('Introduce un número: '));
+//         }
+
+//     }
+//     alert(`El ${numero} es primo`);
+//     break;
+
+// }
+
 
 // 5. Escribir un script que pida al usuario una contraseña. Si coincide le devolverá el mensaje "Acceso concedido" y si no coincide le deolverá el mensaje "Acceso Denegado" . Solo falla tres veces se emitirá el mensaje "Alerta, intruso"
-
 // > La contraseña es por ejemplo pasar. Tecleo tres veces otra distinta: Acceso Intruso.
+// let userPassword = prompt('Introuce tu contraseña: ');
+// let intentos = 0;
+// let password = 'pasar';
+// let authenticathed = true;
+
+// while(authenticathed) {
+//     if(password === userPassword) {
+//         alert('Acceso concedido');
+//         break;
+//     } else {
+//         alert('Accedo denegado');
+//         userPassword = prompt('Introuce tu contraseña: ');
+//         intentos += 1;
+//         if(intentos === 2) {
+//             alert('Alerta, intruso.');
+//             break;
+//         }
+//     }
+// }
 
 // 6. En este script se pedirá al usuario que teclee un número cada vez. El proceso acaba cuando teclee un 0 en cuyo caso además mostrará la suma de todos los números tecleados.
-
 // > El usuario teclea primero el 4 luego el 5 depsués 6 y finalmente , 0. El programa se para y muestra "La suma de todos los número es 15"
+// let bucle = true;
+// let sumUserBucle = 0;
+
+// while(bucle) {
+//     let numUser = parseInt(prompt('Introduce un número. Si quieres acabar el bucle pulsa 0:'));
+
+//     sumUserBucle += numUser;
+
+//     if(numUser === 0) {
+//         alert(`La suma total que has realizado es de ${sumUserBucle}. Proceso terminado`);
+//         break;
+//     }
+// }
+
 
 // 7. Este script le pide al usuario que vaya tecleando números enteros positivos hasta que el usuario ingrese el 0. En esete caso el programa acaba mostrando el valor máximo y mínimo de los números tecleados.
-
 // > El usuario teclea la sere 4,2,3,5,0, El máximo es 5 y el minimo es 2. Si telcea 2,2,2,0, máximo es 2 y minimo es 2.
+// let arrNumUser = [];
+// let steps = true;
+
+// while(steps) {
+//     let numUser = parseInt(prompt('Introduce un número. Si quieres acabar el bucle pulsa 0: '));
+
+//     if(numUser > 0) {
+//         arrNumUser.push(numUser);
+//     }
+
+//     arrNumUser.sort(function (a, b) {
+//         return a - b;
+//     });
+
+//     let min = arrNumUser[0];
+//     let max = arrNumUser[arrNumUser.length - 1];
+
+//     if(numUser === 0) {
+//         alert(`El número máximo es: ${max}. El número mínimo es: ${min}`);
+//         alert('Proceso terminado.');
+//         break;
+//     }
+
+// }
 
 // 8. Este script le pide al usuario que vaya tecleando números una y otra vez, pero solo números pares, en caso de que teclee un número impar el programa acabará y dirá la cantidad de números pares ingresados (el 0 cuenta como par).
-
 // > Muestra Si escribo 2,8,12,1 el script me dirá "Ha escrito 3 números pares")
+// let arrEven = [];
+// let start = true;
+
+// while(start) {
+//     let numUser = parseInt(prompt('Introduce un número par. Cuando quieras acabar introduce uno impar: '));
+
+//     if(numUser % 2 === 0) {
+//         arrEven.push(numUser);
+//     }
+
+//     if(numUser % 2 === 1) {
+//         alert('Proceso terminado');
+//         alert(`Has introducido ${arrEven.length} números pares.`);
+//         break;
+//     }
+// }
 
 // 9. Este script muestra un menu de opciones: 1- Leer datos. 2- Mostrar datos 3- Fin. El usuario deberá teclear uno de ellos y el programa mostrará la opción elegida. Si teclea un valor fuera del menus se mostrará un mensaje de error y se vuelve a pedir un número de opción. El programa finaliza al teclear el 3.
-
 // > Pulso 1, mensaje Opción leeer datos. Y vuelve a pader opción. Pulso 4 : Error y vuelve a pedir opción, Pulso 3: Fin del programa y acaba
 
-// 10. Un script pedirá al usuario que vaya tecleando números hasta llegar al 0, entocnes el programa muestra "La suma es " seguido de la suma de los números. Si esta suma es par el programa se repite y si es impar el programa acaba.
+// while(true) {
+//     let selectUser = parseInt(prompt('Escoge entre las siguientes opciones: \n 1- Leer datos. \n 2- Mostrar datos. \n 3. Fin.'));
 
+//     if(selectUser === 1) {
+//         alert('Leyendo datos');
+//     } else if(selectUser === 2) {
+//         alert('Mostrando datos');
+//     } else if(selectUser === 3) {
+//         alert('Finalizando programa');
+//         break;
+//     } else {
+//         alert('No has introducido una opción correcta.');
+//     }
+// }
+
+
+// 10. Un script pedirá al usuario que vaya tecleando números hasta llegar al 0, entocnes el programa muestra "La suma es " seguido de la suma de los números. Si esta suma es par el programa se repite y si es impar el programa acaba.
 // > Si tecleo 2,6,2, 0 Me dirá suma "10" y volverá a pedir otra serie de números, si tecleo 2,6,3 Me dirá "suma 11" y acabará.
+// let sumUserOdd = 0;
+
+// while(true) {
+//     let numUser = parseInt(prompt('Introduce un número. Para que el programa acabe debes pulsar el 0 y el total de la suma debe dar un número impar: '));
+
+//     sumUserOdd += numUser;
+
+//     if(numUser === 0) {
+//         alert(`La suma total de números es: ${sumUserOdd}`);
+//         if(sumUserOdd % 2 === 1) {
+//             alert('Programa terminado');
+//             break;
+//         } else {
+//             sumUserOdd = 0;
+//         }
+//     }
+// }
 
 // ---
 
 // ## - Bucles Do...While -
 
 // 1. Realiza un script que le pida al usuario que telee la letra A (en mayúscula) y mientras no lo haga se lo vuelva a pedir. Usa un bulce do..while y la ventana alert para los mensajes
-
 // > El usuario teclea b, el programa vuelve a pedirme que teclee una letra
+// do {
+//     userSelect = prompt('Introduce la letra A.');
+//     if(userSelect === 'A') {
+//         alert('Proceso correcto');
+//     } else {
+//         alert('No se ha introducido correctamente');
+//     }
+// } while(userSelect !== 'A')
 
 // 2. Este script usará un bucle do while para determinar si un número es primo o no. El numero tecleado deberá estar entre 0 y 100. Si es primo lo mostrará en una ventana alert
-
 // > Si escribo 0 o 100 el programa me seguirá pidiendo un número
+// let prime = true;
+// do {
+//     let numUser = parseInt(prompt('Introduce un número del 0 al 100'));
+//     for(let i = 2; i < numUser; i++) {
+//         if(numUser % i === 0) {
+//             alert(`El ${numUser} no es primo`)
+//             numUser = parseInt(prompt('Introduce un número del 0 al 100'));
+//             if(numUser === 0 || numUser === 100) {
+//                 numUser = parseInt(prompt('Introduce un número del 0 al 100'));
+//             }
+//         }
+//     }
+//     prime = false;
+//     alert(`El ${numUser} es primo`);
+// } while(prime)
 
 // 3. En este script vas a crear un menu con tres opciones: escribir, leer, ssalir. El usuario elegirá una opción y en un alert se le indicará la opción elegida. El programa vuelve a mostrar el menu y se repite el proceso. El script acabará cuando se pulse la opción de salir.
-
 // > El menu tiene 3 opciones, elijo la opción 2, respuesta "has elegido leer".
+// let options = true;
+// do {
+//     let selectUser = parseInt(prompt('Elije una opción: \n 1- Escribir \n 2- Leer \n 3- Salir'));
+
+//     if(selectUser === 1) {
+//         alert('Has elegido escribir');
+//     } else if(selectUser === 2) {
+//         alert('Has elegido leer');
+//     } else if(selectUser === 3) {
+//         alert('Saliendo del programa');
+//         options = false;
+//     } else {
+//         alert('Esa no es una opción válida');
+//     }
+
+// } while(options);
 
 // 4. En este script se le pide al usuario que teclee dos números, el script mostrará la suma y pedirá al usuario si queire repetir. Si teclea S repite y si teclea N el programa sale. No acepta otras teclas
-
 // > Por ejemplo si tecleo 3 despues 9 me dirá que la suma es 12, y luego me preguntará si quiero repetir.
+// let stillProgram = true;
+// let selectUser1 = parseInt(prompt('Introduce un número: '));
+// let selectUser2 = parseInt(prompt('Introduce otro número: '));
+// alert(`La suma de ${selectUser1} y ${selectUser2} es ${selectUser1 + selectUser2}`)
+
+// do {
+//     let still = prompt('¿Quieres repetir?: Pulsa s para seguir. Pulsa n para finalizar el programa');
+
+//     if(still === 's') {
+//         let selectUser1 = parseInt(prompt('Introduce un número: '));
+//         let selectUser2 = parseInt(prompt('Introduce otro número: '));
+//         alert(`La suma de ${selectUser1} y ${selectUser2} es ${selectUser1 + selectUser2}`);
+//         still;
+//     } else if(still === 'n') {
+//         alert('Finalizando');
+//         stillProgram = false;
+//     } else {
+//         alert('Esa no es una opción válida');
+//     }
+
+// } while(stillProgram);
 
 // 5. Usar un bucle do..while para crear una cadena que contenga letras repetidas. Las letras se entran por teclado y solo podrán ser la X o la Z despues de elegir las letras se le ingresa el número de repeticiones que deberá estar entre 1 y 15.
-
 // > Si elijo X y luego telco 10 se mostrará XXXXXXXXXX. Si tecleo z me olverá a pedir letra, y sitecelo 20 me volverá a pedir el número
 
-// 6. En este sript se trata de calcular el máximo común divisor de dos números. El algorimto es simple: dividimos el primoer por el segundo. si el resto es cero este segundo es el mcm. Si no se desecha el primero y se repite el proceso con el segundo y el resto. Así mientras el resto no sea 0
+// let userString = '';
+// let stillStringing = true;
 
+// do {
+//     let char = prompt('Introduce la z o la x: ');
+
+//     if(char === 'x' || char === 'z') {
+//         let num = parseInt(prompt('Introduce el número de repeticiones entre el 1 y el 15: '));
+//         if(num >= 1 && num <= 15) {
+//             userString = char.repeat(num);
+//             alert(`El restulado es ${userString}`);
+//             stillStringing = false;
+//         } else {
+//             alert('Número no válido');
+//             num;
+//         }
+//     } else {
+//         alert('Letra no válida');
+//         char;
+//     }
+
+// } while(stillStringing);
+
+// 6. En este sript se trata de calcular el máximo común divisor de dos números. El algorimto es simple: dividimos el primoer por el segundo. si el resto es cero este segundo es el mcm. Si no se desecha el primero y se repite el proceso con el segundo y el resto. Así mientras el resto no sea 0
 // > Si tecleo 20 y luego 10, el mcd es 10. Si tecleo 4 y luego 20 el mcd será 4. Si tecleo 20 y 8 el mcd es 4.
 
-// 7. Este ejemplo debe pedir al usuario un  número entero y, mediante sucesivas divisiones por 10 debe escribir los digitos que lo forman de menor a mayor orden (de unidades hacia arriba) en una cadena separados por un espacio
+// let num1 = parseInt(prompt('Introduce un número: '));
+// let num2 = parseInt(prompt('Introduce otro número: '));
+// let mcd;
 
+// do {
+//     mcd = num2;
+//     num2 = num1 % num2;
+//     num1 = mcd;
+
+// } while(num2 !== 0);
+
+// alert(`El MCD es: ${mcd}`);
+
+// 7. Este ejemplo debe pedir al usuario un  número entero y, mediante sucesivas divisiones por 10 debe escribir los digitos que lo forman de menor a mayor orden (de unidades hacia arriba) en una cadena separados por un espacio
 // > Si escribo 126 deberá responder  "Dígitos del número: 6 2 1"
+// let numUser = parseInt(prompt('Introduce un número entero'));
+// let div = [];
+// let rest;
+// do {
+
+//     rest = parseInt(numUser % 10);
+//     if(rest > 0) {
+//         div.push(rest);
+//     }
+//     numUser = parseFloat(numUser / 10);
+
+// } while(rest !== 0);
+
+// let strDiv = '';
+
+// for(let i = 0; i < div.length; i++) {
+//     strDiv += div[i].toString() + " ";
+// }
+
+// alert(`Dígitos del número: ${strDiv}`);
+
 
 // 8. Diseñar un script que pida un número mayor que cero y devuelva la suma de todos los números pares desde cero al número introducido. Mostrará la suma y volverá a pedir otro núero hasta que el usuario teclee un 0.
-
 // > Si tecleo el 10 mostrará 30 la suma de 2+4+6+8+10
+// let startProgram = true;
+// let sum = 0;
+// do {
+
+//     let numUser = parseInt(prompt('Introduce un número mayor que 0. Para cortar el bucle introduce un 0: '));
+
+//     if(numUser > 0) {
+//         for(let i = 0; i <= numUser; i++) {
+//             if(i % 2 === 0) {
+//                 sum += i;
+//             }
+//         }
+//         alert(`La suma total es ${sum}`);
+//         sum = 0;
+//     } else {
+//         alert('Cerrando programa...');
+//         startProgram = false;
+//     }
+
+
+// } while(startProgram);
 
 // 9. Escribir un script usando el bucle do while para pedir que el usuario escriba dos números. Si el primero es mayor que el segundo el programa volverá a pedir que se escriban los números. Si el primero es menor o igual que el segundo el programa acaba y dice "Numeros en orden creciente"
-
 // > Si tecleo pimero un 12 y luego un 9, volverá a pedirme que escriba los datos. Si escribo un 12 y luego un 20 me dirá "Numeros ordenados"
+// let startNums = true;
+// do {
+//     let numUser1 = parseInt(prompt('Introduce un número: '));
+//     let numUser2 = parseInt(prompt('Introduce otro número: '));
+
+//     if(numUser1 < numUser2) {
+//         alert('Números ordenados');
+//         startNums = false;
+//     } else {
+//         numUser1;
+//         numUser2;
+//     }
+
+// } while(startNums);
 
 // 10. Escribir un script para determinar si el numero introducido por el usuario es un palíndromo, es decir, un número que se lee igual del derecho que del revés.
 // Para invertir el número podéis hacer sucesivas divisiones entre 10: el resto lo añadis al inveso multiplicado por 10. Y repetis con el valor entero del numero dividido por 10.
-
 // > Si escribo el número 12421 me dirá que "12421 es un palíndromo".
+// let pal = true;
+
+// do {
+//     let numUser = parseInt(prompt('Introduce un número: '));
+
+//     let reverse = numUser.toString().split("").reverse().join("");
+
+//     if(numUser.toString() === reverse) {
+//         alert('Es un palíndromo');
+//         pal = false;
+//     } else {
+//         alert('No es un palíndromo');
+//         pal = false;
+//     }
+
+// } while(pal);
 
 // ---
 
 // ## - Arrays -
 
 // 1. En este script deberás crear un array para guardar los nombres de los días de la semana, empezando por 0 para el domingo. Para comprobar el funcionamiento pide al usuario un número entre 0 y 6 y devuelve el nombre del día. Se supone que el dato tecleado estará entre 0 y 6
-
 // > Si tecleo el número 4 me deberá decir que el día de la semana es jueves
+// let weekDays = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+
+// let selectuUserDay = parseInt(prompt('Escoge un día del 0 al 6: '));
+
+// switch(selectuUserDay) {
+//     case 0:
+//         alert(weekDays[6]);
+//         break;
+//     case 1:
+//         alert(weekDays[0]);
+//         break;
+//     case 2:
+//         alert(weekDays[1]);
+//         break;
+//     case 3:
+//         alert(weekDays[2]);
+//         break;
+//     case 4:
+//         alert(weekDays[3]);
+//         break;
+//     case 5:
+//         alert(weekDays[4]);
+//         break;
+//     case 6:
+//         alert(weekDays[5]);
+//         break;
+//     default:
+//         alert('Número incorrecto');
+//         break;
+// }
 
 // 2. Crea un array booleano con dos valores 'verdadero' y 'falso'. Este array te sirve para traduicr los valores true y false. Usalo para que el script muestre un alert con el nombre vedadero si un usuario teclea un valor entre 0 y 9 y falso en el caso contrario.
-
 // > Por ejemplo al teclear 10 deberá devolver falso
+// let boolArr = [true, false];
+// let selectionUser = parseInt(prompt('Introduce un número: '));
+// if(selectionUser >= 0 && selectionUser <= 9) {
+//     alert(boolArr[0]);
+// } else {
+//     alert(boolArr[1]);
+// }
 
 // 3. Sin usar métodos del objeto array, diseña una función llamada sumaLista() capaz de sumar todos los números que forman el array que se le pase como argumento.
-
 // > Si ejecuto sumaLista([2,4,5,1,2]) deberá devolver como resultado 14
+// function sumaLista(arr) {
+//     let sum = 0;
+//     for(let i = 0; i < arr.length; i++) {
+//         sum += arr[i];
+//     }
+//     return sum;
+// }
+
+// console.log(sumaLista([2, 4, 5, 1, 2]));
 
 // 4. Diseña un script que vaya leyendo números y guardándolos en un array. Una vez lleno mostrará el array y deberá decir cuantos números son pares y cuantos son impares. La entrada de datos termina cuando el usuario teclea 0 o un valor no numérico.
 // Intenta resolverlo sin usar métodos del objeto array, solo indices y longitudes de arrays.
 // No debe aceptar valores no numéricos (isNaN(valor) permite detectar valores no numéricos).
-
 // > Por ejemplo si tecleo: 3,5,4,6,7,8, 11el script me dirá que el array de entrada es [3,5,4,6,7,8, 11] y que hay 3 pares y 4 impares.
+// let saveArr = []
+// let on = true;
+
+// while(on) {
+//     let numUser = parseInt(prompt('Introduce un número. Paras el programa al pulsar el 0: '));
+//     let odd = 0;
+//     let even = 0;
+
+//     if(isNaN(numUser)) {
+//         alert('Eso no es un número');
+//         numUser;
+//     } else if(numUser === 0) {
+//         for(let i = 0; i < saveArr.length; i++) {
+//             if(saveArr[i] % 2 === 0) {
+//                 even += 1;
+//             } else {
+//                 odd += 1;
+//             }
+//         }
+//         alert(`El array ${saveArr.join(' ')} tiene ${even} números pares y ${odd} números impares`);
+//         alert('Finalizando');
+//         on = false;
+
+//     } else {
+//         saveArr.push(numUser);
+//         numUser;
+//     }
+
+// }
 
 // 5. Escribe una función que pueda devolver el valor más pequeño de un array numérico o el índice de ese valor. El segundo parámetro de la función dirá si debe devolver el valor ("v") o el índice ("i"). No uses métodos del objeto array.
 // Se supone que el primer parámetro siempre será una matriz llena con al menos 1 número y sin duplicados.
 // Se suponer el segundo parámetro será una letra con uno de dos valores: 'v' 'i'
-
 // > min([4,5,7], 'v')  devolverá 4, mientras que min([4,5,7], 'i') devolverá 0.
+// function min(arr, opt) {
+//     let minValue = arr[0];
+//     let minIndex = 0;
+
+//     for(let i= 1; i < arr.length; i++) {
+//         if(arr[i] < minValue) {
+//             minValue = arr[i];
+//             minIndex = i;
+//         }
+//     }
+
+//     return opt === 'v' ? minValue : minIndex;
+// }
+
+// console.log(min([18, 5, 7], "v"));
 
 // 6. Escribe una función que determina si la letra que se le pasa como argumento se encuentra contenida dentro de un array de letras que se le pasa como segundo argumento.
 // Se trata de resolverlo sin usar métodos del objeto array, solo el dato tipo array.
-
 // > existeEn('a', ['w','e','r','i']) devolverá false porque la letra 'a' no existe en el array
+// function existeEn(value, arr) {
+//     for(let i = 0; i < arr.length; i++) {
+//         if(value === arr[i]) {
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+// console.log(existeEn('a', ['w', 'e', 'r', 'i']));
 
 // 7. En este ejempo debes crear una función que reciba una array y devuelva una cadena formada por los elementos del array separados por un guión - si una letra es una vocal. La función tiene como único parámetro la letra que se quiere comprobar. Debe funcionar igual con mayúsculas y con minúsculas y por supuesto usando arrays.
 // Solo se aceptan letras internacionales (sin acentos)
-
 // > Por ejemplo esVocal('A') dirá true, mientras que esVocal("z") dirá false.
+// function esVocal(letra) {
+//     let vocales = ['a', 'e', 'i', 'o', 'u'];
+//     let letraMinuscula = letra.toLowerCase();
+//     if (vocales.includes(letraMinuscula)) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
+
+// console.log(esVocal(''));
+
+
 
 // 8. Escribe una función qeu reciba como argumento un array y que devuelva una cadena de caracteres formada por los elementos del array separados por un guión
-
 // > Si llamamos a la función como listar("rojo", "verde", "azul") deberá devolver "rojo-verde-azul"
+function listar(arr) {
+    let str = '';
+
+    for(const word of arr) {
+        if(word === arr[arr.length -1]) {
+            str += word;
+        } else {
+            str += word + '-';
+        }
+    }
+
+    return str;
+}
+
+console.log(listar(["rojo", "verde", "azul"]));
 
 // 9. Un servicio de atención al ciente tiene establecido turnos semanales para sus empleados de manera que cada día de la semana se encarga del servicio  una persona: lunes - María, Martes - Luis, Miércoles - Antonia, Jueves - Pedro, Viernes - Marisa.
 // Usa un array para almacenar los datos del servicio. En este array cada elemento será un para día - nombre.
 // Crea una función que responda con el nombre de la persona encargada del servicio sabiendo el día. Si el día no existe deberá decir que no hay servicio. Los nombres de los días deben ir en minúsculas.
-
 // > Si le pido servicio('Lunes') me debería decir "Este día se encarga María" y si le pido servico(Miércoles") me daría Antonia.
+function servicio(day) {
+    let services = ['María', 'Luis', 'Antonia', 'Pedro', 'Marisa'];
+
+    let dayMinus = day.toLowerCase();
+
+    switch(dayMinus) {
+        case 'lunes':
+            console.log(`De ese servicio se encarga ${services[0]}`);
+            break;
+        case 'martes':
+            console.log(`De ese servicio se encarga ${services[1]}`);
+            break;
+        case 'miércoles':
+            console.log(`De ese servicio se encarga ${services[2]}`);
+            break;
+        case 'jueves':
+            console.log(`De ese servicio se encarga ${services[3]}`);
+            break;
+        case 'viernes':
+            console.log(`De ese servicio se encarga ${services[4]}`);
+            break;
+        default:
+            console.log(`Ese día no hay servicios`);
+            break;
+    }
+}
+
+servicio('lunes');
 
 // 10. Un tienda vende monitores, teclados y ratones. Los precios se almacenan en una estructura array conde cada elemento es un par producto - precio.
 // Diseña una función que reciba como argumento el nombre de un producto (minúscula) y devuelva su precio.
-
 // > Si la lsita de precios es monitor: 200€, teclado: 20€ ratón: 10€, al pedri precio('monitor') me devolcerá 200.
+function precios(producto) {
+    let precios = [['monitor', 200], ['teclado', 20], ['ratón', 10]];
+    let precioProducto = 0;
+
+    for(let i = 0; i < precios.length; i++) {
+        if(precios[i][0] === producto) {
+            precioProducto = precios[i][1];
+            break;
+        }
+    }
+    return precioProducto;
+}
+console.log(precios('monitor'));
 
 // ---
 
