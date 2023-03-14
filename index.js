@@ -1133,20 +1133,47 @@ console.log(precios('monitor'));
 // ## - Funciones -
 
 // 1. Crea una función que tenga dos argumentos: num1, num2, y que deuelva como resultado la suma de ambos números. Se supone que se usarán solo números válidos.
-
 // > Llamo a la función como sumar(3,5) deberá devolver 8.
+function sumar(num1, num2) {
+    if(Number(num1) && Number(num2)) {
+        return num1 + num2;
+    } else {
+        return 'Uno de los argumentos no es un número';
+    }
+
+}
+
+console.log(sumar(3,5));
 
 // 2. Esta función se va a llamar esPar(num) y deberá devolver verdadero si el argumento es par y falso si es impar. Se acepta que solo se usarán números válidos.
-
 // > Por ejemplo al llamarla como esPar(5) me dará false, mientras que con esPar(6) me dará true.
+function esPar(num) {
+    if(num % 2 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(esPar(5));
 
 // 3. Función que calcule si un número es múltiplo de otro. La función recibirá dos argumentos, el primero será el supuesto mutiplo del segundo argumento.
-
 // > Si ejecuto o llamo a la función con esMultiplo(40,4) debe devolver true porque 40 es divisible por 4.
-
+function esMultiplo(num1, num2) {
+    if(num1 % num2 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(esMultiplo(40, 4));
 // 4. Definir una función que cree una cadena de letras repetidas tantas veces como le digamos. La función recibe dos argumentos: la letra y el número de repeticiones.
-
 // > Al ejecutar repetir('a', 5) deberá devover la caden  aaaaa.
+function repetir(char, num) {
+    let str = char.repeat(num);
+
+    return str;
+}
+console.log(repetir('a', 5));
 
 // 5. Usa el algoritmo de Euclides para diseñar una función que determine el máximo común divisor de dos números. Bueno este algoritmo es bien simple. Para clacular el mcd de A y B:
 // ```
@@ -1157,25 +1184,89 @@ console.log(precios('monitor'));
 // Asigna a B el resto
 // Repite hasta que A o B sean 0.
 // ```
+// > Si me piden el MCD(10, 5) tendré 5 como solución, y el MCD( 24, 9) será 3, y el MCD(12,20) será 4
+function mcd(num1, num2) {
 
-// > Si me piden el MCD(10, 5) tendré 5 como solución, y el MCD( 24, 9) será 1, y el MCD(12,20) será 4
+    let mcd;
+
+    do {
+        mcd = num2;
+        num2 = num1 % num2;
+        num1 = mcd;
+
+    } while(num2 !== 0);
+
+    return mcd
+}
+
+console.log(mcd(24, 9))
 
 // 6. Diseña una función que calcule el factorial de un número, usa una función recursiva (que se llama a si misma). Recuerda que el factorial de un número es el resultado de multiplicar cada número por el anterior hasta llegar a 1. Y el factorail de 0 es por definición 1
-
 // > Si escribo factorial(3) obtendré 3*2*1 = 6
+function factorial(num) {
+    let factorial = 1;
+    for(let i = 1; i <= num; i++) {
+        factorial *= i;
+    }
+
+    return factorial;
+}
+
+console.log(factorial(3));
 
 // 7. Escribir una función que reciba un número como argumento y lo devuelva invertido, o sea, escrito del revés. Usar esta función para determinar si un número es capicúa (palíndromo)
-
 // > Si ejecuto invertir(123) me deberá devolver el número 321 y me diría que no es capicua. Sin embargo si hago invertir(242) el resultado sería 242, y la prueba me diría que es capicúa.
+function invertir(num) {
+    let reverse = num.toString().split("").reverse().join("");
+
+    if(num.toString() === reverse) {
+        return 'Es capicúa';
+    } else {
+        return 'No es capicúa';
+    }
+}
+console.log(invertir(123));
 
 // 8. Escribe una función que recibe como argumento un precio y el porcentaje de impuestos. La función devolverá el valor total a pagar, teniendo en cuenta que al precio se le descuenta un porcentaje del 10% si es mayor de 100 euros.
-
 // > Si he comprado por valor de 200 euros con un impuesto del 5%, me descuentan un 10% por tanto pago 180 euros más los impuestos que son el 5% de 180. En total 189 euros.
+function calc(precio, impuesto) {
+    if(precio >= 100) {
+        return (precio - (precio * 10 / 100)) + ((precio - (precio * 10 / 100)) * impuesto / 100);
+    } else {
+        return precio + (precio * impuesto / 100);
+    }
+}
+console.log(calc(200, 5));
 
 // 9. En esta función se trata de convertir notas a calificaciones literales de manera que menos de 5 es suspenso, un 5 es aprobado, el 6 es bine, el 7 y el 8 son notable, el 9 es sobresaliente y el 10 es matrícula.
-
 // > Por ejemplo si pido miCalificacion(5) la función me dirá tu calificación es Aprobado
+function miCalificacion(num) {
+    if(num < 5) {
+        return 'Suspenso';
+    } else if(num >= 5 && num < 7) {
+        return 'Aprobado';
+    } else if(num >= 7 && num <= 8) {
+        return 'Notable'
+    } else if(num >= 9 && num < 10) {
+        return 'Sobresaliente';
+    } else if(num === 10) {
+        return 'Matrícula';
+    }
+}
+console.log(miCalificacion(7.9));
 
 // 10. Escibe una función que devuelva el siglo al que correponde un año que se la pasa como argumento. El siglo 1 va del año 1 al 100, el siglo 2 va del 101 al 200....
-
 // > Por ejemplo si le pido siglo(1910) me dirá siglo 20
+function siglo(num) {
+
+    let int = Math.floor(num / 100);
+    let dec = num % 100;
+
+    if(dec !== 0) {
+        return `Estamos en el siglo ${int+1}`;
+    } else {
+        return `Cambiamos al siglo ${int + 1}`;
+    }
+
+}
+console.log(siglo(1898));
